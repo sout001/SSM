@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zking.SSM.home.mapper.UserInfoMapper">
+
+    <insert id="registered">
+        insert into userinfo(version,bitState,score,phoneNumber,email)
+        values (1,1,20,#{phoneNumber},#{email});
+    </insert>
+
+</mapper>

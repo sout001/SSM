@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zking.SSM.home.mapper.LoginMapper">
+
+    <insert id="addByLoginUser">
+        insert into logininfo(username, password, salt, state, userType)
+        values (#{username},#{password},#{salt},0,0);
+    </insert>
+
+    <select id="login" resultType="com.zking.SSM.home.model.LogininfoModel">
+        select * from logininfo
+        <where>
+            <if test="name !=null and name != ''">
+                and username = #{name}
+            </if>
+            <!--<if test="passWord !=null and passWord != ''">-->
+                <!--and password = #{passWord}-->
+            <!--</if>-->
+        </where>
+    </select>
+</mapper>
